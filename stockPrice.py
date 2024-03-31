@@ -1,10 +1,3 @@
-"""
-證交所及櫃買中心爬蟲程式
-程式碼撰寫: 蘇彥庭
-日期: 20210105
-程式說明: 此程式主要用於下載股價資料表(爬取最近7個交易日資料)
-"""
-
 # 載入套件
 import datetime
 import requests
@@ -28,6 +21,7 @@ for iDate in dateList:
     # 下載證交所資料
     # 取得目標日期資料
     url = 'https://www.twse.com.tw/exchangeReport/MI_INDEX?response=html&date=' + iDate + '&type=ALLBUT0999'
+    print(url)
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
